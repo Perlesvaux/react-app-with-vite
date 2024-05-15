@@ -51,6 +51,9 @@ Create new repository [here](https://github.com/new)
 git remote add origin https://github.com/USERNAME/REPOSITORY_NAME.git
 git branch -M main
 git push -u origin main
+
+# Then, go to: https://github.com/USERNAME/REPOSITORY_NAME/settings/pages
+# In Branch, select: 'gh-pages'. Then, save.
 ```
 
 
