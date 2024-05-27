@@ -39,7 +39,7 @@ import apiUrl from './config'
     { legend: '<i class="bi bi-terminal-fill fs-3"></i> ... When it\'s all said and done... It\'s time to deploy!', cmd: purified('bash', `npm run deploy`) }
   ]
 
-  const nuke = `echo "import { defineConfig } from 'vite'
+  const tsar_bomba = purified('bash',`echo "import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 // https://vitejs.dev/config/
@@ -47,7 +47,17 @@ export default defineConfig({
   base:'/${state.rep}/',
   plugins: [react()],
 })" > vite.config.js && echo "VITE_API_URL=${state.devEnv}" > .env.development && echo "VITE_API_URL=${state.proEnv}" > .env.production && echo "const apiUrl = import.meta.env.VITE_API_URL;
-export default apiUrl;" > ./src/config.js && npm pkg set 'scripts.predeploy'='vite build' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm install --save-dev gh-pages`
+export default apiUrl;" > ./src/config.js && npm pkg set 'scripts.predeploy'='vite build' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm install --save-dev gh-pages`)
+
+
+  const little_boy = purified('bash',`echo "import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  base:'/${state.rep}/',
+  plugins: [react()],
+})" > vite.config.js && npm pkg set 'scripts.predeploy'='vite build' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm install --save-dev gh-pages`)
 
 
   function getInput(e){
@@ -64,15 +74,17 @@ export default apiUrl;" > ./src/config.js && npm pkg set 'scripts.predeploy'='vi
 
 
   function purified(lng, mrkp){
-    // return DOMPurify.sanitize(hljs.highlight(mrkp, {language: lng}).value)
-    return DOMPurify.sanitize(mrkp)
+    return DOMPurify.sanitize(hljs.highlight(mrkp, {language: lng}).value)
+    // return DOMPurify.sanitize(mrkp)
   }
 
 
-async function toClipBoard(e) {
+function toClipBoard(e) {
   try {
-    await navigator.clipboard.writeText(e.target.innerText);
-    console.log(e.target.innerText);
+    // await navigator.clipboard.writeText(e.target.innerText);
+    navigator.clipboard.writeText(e.currentTarget.textContent);
+    console.log(e.currentTarget.textContent)
+    // console.log(e.currentTarget.textContent);
     /* Resolved - text copied to clipboard successfully */
   } catch (err) {
     console.error('Failed to copy: ', err);
@@ -91,10 +103,10 @@ async function toClipBoard(e) {
         <label htmlFor="parseUrl" className='optn text-center badge text-bg-dark fs-6'>Enter the URL to your GitHub repo
           <input type="text" name="parseUrl" onChange={getInput} onKeyUp={parseUrl}  value={state.parseUrl} /> 
         </label>
-        <label htmlFor="devEnv" className='optn text-center badge text-bg-dark fs-6'>Development backend
+        <label htmlFor="devEnv" className='optn text-center badge text-bg-dark fs-6'>URL to Development backend
           <input type="text" name="devEnv" onChange={getInput} value={state.devEnv}/> 
         </label>
-        <label htmlFor="proEnv" className='optn text-center badge text-bg-dark fs-6'>Production backend 
+        <label htmlFor="proEnv" className='optn text-center badge text-bg-dark fs-6'>URL to Production backend 
           <input type="text" name="proEnv" onChange={getInput} value={state.proEnv}/> 
         </label>
       </div>
@@ -107,8 +119,14 @@ async function toClipBoard(e) {
       }
 
       <h1 className='text-center'>Push it to the limit!</h1>
-      <p className='text-center text-muted'> <i className="bi bi-radioactive fs-3"></i> This one below can <strong>nuke</strong> some data. Use only if you're in a hurry and there's not much to lose!</p>
-      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:nuke}}></code></pre>
+      <p className='text-center'> <i className="bi bi-radioactive fs-3"></i> These below can <strong>nuke</strong> some data. Use only if you're in a hurry and there's not much to lose!</p>
+      <h6 className='text-muted'> <i className="bi bi-file-code-fill fs-2"></i> One-liner with the essentials. Only thing left is to run the <strong>deploy</strong> script!</h6>
+      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:little_boy}}></code></pre>
+
+
+
+      <h6 className='text-muted'> <i className="bi bi-file-code fs-2"></i> This one also includes the <strong>optional</strong> configuration. Only for those that wanna go <strong>Full Nuclear!</strong></h6>
+      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:tsar_bomba}}></code></pre>
     </>
   )
 }
