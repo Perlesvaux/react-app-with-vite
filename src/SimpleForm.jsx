@@ -2,6 +2,7 @@ import styles from './SimpleForm.module.css'
 
 const optn = `${styles.optn} text-center badge text-bg-dark fs-6`
 const pwafield = `${styles.optn} text-center badge text-bg-light fs-6`
+const bckndfield = `${styles.optn} text-center badge text-bg-secondary fs-6`
 const container = `${styles.container} container text-bg-dark`
 const spaced = {justifyContent:'space-between'}
 
@@ -18,13 +19,25 @@ export default function SimpleForm({getInput, parseUrl, state}){
         <label htmlFor="prePort" className={optn} style={spaced}>Preview PORT 
           <input type="text" name="prePort" onChange={getInput} value={state.prePort}/> 
         </label>
-        <label htmlFor="devEnv" className={optn} style={spaced}>URL to Development backend
+        <label htmlFor="backend" className={bckndfield} style={spaced}>Is there a backend? 
+          <label> NO <input type="radio" id="backend0" name="backend" value="0"  onChange={getInput} checked={state.backend === '0'} /></label>
+          <label> YES <input type="radio" id="backend1" name="backend" value="1"  onChange={getInput} checked={state.backend === '1'}/></label>
+        </label>
+        {
+          state.backend==='1' &&
+          (<>
+        <label htmlFor="devEnv" className={bckndfield} style={spaced}>URL to Development backend
           <input type="text" name="devEnv" onChange={getInput} value={state.devEnv}/> 
         </label>
-        <label htmlFor="proEnv" className={optn} style={spaced}>URL to Production backend 
+        <label htmlFor="proEnv" className={bckndfield} style={spaced}>URL to Production backend 
           <input type="text" name="proEnv" onChange={getInput} value={state.proEnv}/> 
         </label>
-        <label htmlFor="pwaPlug" className={optn} style={spaced}>Will this be a PWA? 
+          </>)
+      }
+
+
+
+        <label htmlFor="pwaPlug" className={pwafield} style={spaced}>Will this be a PWA? 
           <label> NO <input type="radio" id="pwaPlug0" name="pwaPlug" value="0"  onChange={getInput} checked={state.pwaPlug === '0'} /></label>
           <label> YES <input type="radio" id="pwaPlug1" name="pwaPlug" value="1"  onChange={getInput} checked={state.pwaPlug === '1'}/></label>
         </label>

@@ -18,6 +18,7 @@ function App() {
     devPort:"", //5173
     prePort:"", //4173
     pwaPlug:'0',
+    backend:'0',
     name:null,
     shortName:null,
     themeColor:null,
