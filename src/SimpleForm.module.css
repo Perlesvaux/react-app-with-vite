@@ -1,9 +1,13 @@
 .optn {
   display:flex;
   justify-content: 'space-between';
+  border-radius: 0px;
 }
 
 .container {
   width:50%;
+  border-radius: 10px;
+  padding-bottom: 11px;
+  padding-top: 11px;
 }
 

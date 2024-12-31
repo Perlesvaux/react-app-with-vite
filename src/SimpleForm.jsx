@@ -2,7 +2,7 @@ import styles from './SimpleForm.module.css'
 
 const optn = `${styles.optn} text-center badge text-bg-dark fs-6`
 const pwafield = `${styles.optn} text-center badge text-bg-light fs-6`
-const container = `${styles.container} container`
+const container = `${styles.container} container text-bg-dark`
 const spaced = {justifyContent:'space-between'}
 
 export default function SimpleForm({getInput, parseUrl, state}){
