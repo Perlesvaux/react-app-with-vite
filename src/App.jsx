@@ -29,6 +29,7 @@ function App() {
 
   const steps = [
     { legend:'<i class="bi bi-terminal-fill fs-3"></i>  Create project', cmd: purified('bash',`npm create vite@latest`) },
+    { legend:'<i class="bi bi-terminal fs-3"></i>  Add this if yours is a PWA (don\'t forget to include the three images in /public)', cmd: purified('bash',`npm install --save-dev vite-plugin-pwa`) },
 
     { legend: '<i class="bi bi-terminal-fill fs-3"></i>  ... cd into the project.  Setup the vite.config.js', cmd: purified('bash', `echo "import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react' ${state.pwaPlug==='1' ? `\n\nimport { VitePWA } from 'vite-plugin-pwa'` : ''}

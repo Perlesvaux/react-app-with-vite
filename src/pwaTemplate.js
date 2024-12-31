@@ -4,6 +4,10 @@ export default function pwaTemplate({rep, name, shortName, themeColor, descripti
 
 
   return `,\n\nVitePWA({
+  //you MUST have these three in your './public' directory:
+  //favicon.png, screenshot-wide.png, screenshot-narrow.png
+  //Make sure dimensions are correct. Wrong dimensions may
+  //trigger bug that requires you to delete browser history
       registerType: 'autoUpdate',
       includeAssets: [], // Add static (./public) assets. i.e.: 'vite.svg'
       devOptions:{enabled:true},
