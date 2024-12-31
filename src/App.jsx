@@ -126,9 +126,6 @@ export default defineConfig({
 
       <h6 className='text-muted'> <i className="bi bi-file-code fs-2"></i> This one also includes the <strong>optional</strong> configuration. Only for those that wanna go <strong>Full Nuclear!</strong></h6>
       <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:tsar_bomba}}></code></pre>
-
-      <h1 className='text-center'>PWA Plugin</h1>
-      <p className='text-center'> <i className="bi bi-radioactive fs-3"></i>  <strong>nuke</strong> some data. Use only if you're in a hurry and there's not much to lose!</p>
     </>
   )
 }
