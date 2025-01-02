@@ -1,8 +1,9 @@
 import styles from './SimpleForm.module.css'
 
+const ghpgs = `${styles.optn} text-center badge text-bg-danger fs-6`
 const optn = `${styles.optn} text-center badge text-bg-dark fs-6`
-const pwafield = `${styles.optn} text-center badge text-bg-light fs-6`
-const bckndfield = `${styles.optn} text-center badge text-bg-secondary fs-6`
+const pwafield = `${styles.optn} text-center badge text-bg-primary fs-6`
+const bckndfield = `${styles.optn} text-center badge text-bg-light fs-6`
 const container = `${styles.container} container text-bg-dark`
 const spaced = {justifyContent:'space-between'}
 
@@ -26,6 +27,9 @@ export default function SimpleForm({getInput, parseUrl, state}){
         {
           state.backend==='1' &&
           (<>
+        <label htmlFor="envVar" className={bckndfield} style={spaced}>Give your env variable a name
+          <input type="text" name="envVar" onChange={getInput} value={state.envVar}/> 
+        </label>
         <label htmlFor="devEnv" className={bckndfield} style={spaced}>URL to Development backend
           <input type="text" name="devEnv" onChange={getInput} value={state.devEnv}/> 
         </label>
@@ -59,6 +63,13 @@ export default function SimpleForm({getInput, parseUrl, state}){
 
       </>)
     }
+
+        <label htmlFor="ghpages" className={ghpgs} style={spaced}>GitHub Pages? 
+          <label> NO <input type="radio" id="ghpages0" name="ghpages" value="0"  onChange={getInput} checked={state.ghpages === '0'} /></label>
+          <label> YES <input type="radio" id="ghpages1" name="ghpages" value="1"  onChange={getInput} checked={state.ghpages === '1'}/></label>
+        </label>
+
+
       </div>
 
   </>)

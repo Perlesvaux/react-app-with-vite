@@ -5,17 +5,19 @@ import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
 import { steps_purify, tsar_bomba_purify, little_boy_purify } from './purifiedText.js'
 
-function App() {
+export default function App() {
   const [state, setState] = useState({
     usr:"USERNAME",
     rep:"REPOSITORY_NAME",
     parseUrl:"",
+    envVar:"API_URL",
     devEnv:"http://localhost:3000",
     proEnv:"https://myproject.onrender.com",
-    devPort:"", //5173
-    prePort:"", //4173
+    devPort:'', //5173
+    prePort:'', //4173
     pwaPlug:'0',
     backend:'0',
+    ghpages:'0',
     name:'',
     shortName:'',
     themeColor:'',
@@ -72,17 +74,18 @@ function App() {
 
       <Step steps={steps} toClipBoard={toClipBoard} />
 
-      <h1 className='text-center'>Push it to the limit!</h1>
-      <p className='text-center'> <i className="bi bi-radioactive fs-3"></i> These below can <strong>nuke</strong> some data. Use only if you're in a hurry and there's not much to lose!</p>
-      <h6 className='text-muted'> <i className="bi bi-file-code-fill fs-2"></i> One-liner with the essentials. Only thing left is to run the <strong>deploy</strong> script!</h6>
-      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:little_boy}}></code></pre>
 
-
-
-      <h6 className='text-muted'> <i className="bi bi-file-code fs-2"></i> This one also includes the <strong>optional</strong> configuration. Only for those that wanna go <strong>Full Nuclear!</strong></h6>
-      <pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:tsar_bomba}}></code></pre>
     </>
   )
 }
 
-export default App
+
+
+
+      //<h1 className='text-center'>Push it to the limit!</h1>
+      //<p className='text-center'> <i className="bi bi-radioactive fs-3"></i> These below can <strong>nuke</strong> some data. Use only if you're in a hurry and there's not much to lose!</p>
+      //<h6 className='text-muted'> <i className="bi bi-file-code-fill fs-2"></i> One-liner with the essentials. Only thing left is to run the <strong>deploy</strong> script!</h6>
+      //<pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:little_boy}}></code></pre>
+      //
+      //<h6 className='text-muted'> <i className="bi bi-file-code fs-2"></i> This one also includes the <strong>optional</strong> configuration. Only for those that wanna go <strong>Full Nuclear!</strong></h6>
+      //<pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:tsar_bomba}}></code></pre>
