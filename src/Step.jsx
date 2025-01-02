@@ -1,6 +1,6 @@
 export default function Step({steps, toClipBoard}){
 
-  return (<>
+  return (<div style={{width:'90vh'}}>
       {
         steps.map((step, indx ) =>
         <div key={indx}>
@@ -11,5 +11,5 @@ export default function Step({steps, toClipBoard}){
         { step.legend && (<pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:step.cmd}}></code></pre>)}
         </div>)
       }
-  </>)
+  </div>)
 }

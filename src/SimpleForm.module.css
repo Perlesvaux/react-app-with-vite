@@ -5,7 +5,8 @@
 }
 
 .container {
-  width:50%;
+  /*width:600px;*/
+  width:80vh;
   border-radius: 10px;
   padding-bottom: 11px;
   padding-top: 11px;

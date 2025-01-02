@@ -61,18 +61,13 @@ plugins: [react()${state.pwaPlug==='1' ? `${pwaTemplate(state)}` : ''}],
     },
     { 
       svg:terminal_black,
-      legend: 'Setup environment-based configurations for your backend.', 
-      cmd:purified('bash',`echo "VITE_${state.envVar.toUpperCase()}=${state.devEnv}" >> .env.development && echo "VITE_${state.envVar.toUpperCase()}=${state.proEnv}" >> .env.production && echo "const apiUrl = import.meta.env.VITE_${state.envVar.toUpperCase()};
-export default apiUrl;" >> ./src/config.js
-`)},
+      legend: state.backend==='0'? '' :  `Setup development/production env variables.`, 
+      cmd:purified('bash',`echo "VITE_${state.envVar.toUpperCase()}=${state.devEnv}" >> .env.development && echo "VITE_${state.envVar.toUpperCase()}=${state.proEnv}" >> .env.production`)},
 
     {
       svg:terminal_black,
-      legend: 'Then, import it into your src/App.jsx', 
-      cmd:purified('javascript',`//apiUrl will be ${state.devEnv} while developing locally.
-// and ${state.proEnv} in production.
-import apiUrl from './config'
-` )},
+      legend:  state.backend==='0'? '' :  '... This variable below stores its value', 
+      cmd:purified('javascript',`import.meta.env.VITE_${state.envVar.toUpperCase()}` )},
     { 
       svg:terminal_red,
       legend: state.ghpages==='0'? '' :  '... When it\'s all said and done... It\'s time to deploy!', 

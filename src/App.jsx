@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import './App.css'
-import 'bootstrap-icons/font/bootstrap-icons.css';
+//import 'bootstrap-icons/font/bootstrap-icons.css';
 import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
 import { steps_purify, tsar_bomba_purify, little_boy_purify } from './purifiedText.js'
