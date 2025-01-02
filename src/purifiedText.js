@@ -18,7 +18,7 @@ const terminal_green = TerminalSVG(  { fill:"DarkSeaGreen", size:"50px" } )
 const terminal_red   = TerminalSVG(  { fill:"Crimson", size:"50px" } )
 //const jsxType_red   = JsxTypeSVG(  { fill:"Crimson", size:"50px" } )
 const bolt   = BoltSVG(  { fill:"Gold", size:"50px" } )
-const code_red   = CodeSVG(  { fill:"Crimson", size:"50px" } )
+const code_green   = CodeSVG(  { fill:"DarkSeaGreen", size:"50px" } )
 const obj_purple   = ObjSVG(  { fill:"Purple", size:"50px" } )
 
 
@@ -76,6 +76,29 @@ plugins: [react()${state.pwaPlug==='1' ? `${pwaTemplate(state)}` : ''}],
   ]
 
 
+}
+
+
+export function serve_purify() {
+  return [
+    {
+      svg:code_green,
+      legend: 'Serve (development)',
+      cmd:purified('bash', `npm run dev -- --host`)
+    },
+    {
+      svg:code_green,
+      legend: 'Build',
+      cmd:purified('bash', `npm run build`)
+    },
+    {
+      svg:code_green,
+      legend: 'Serve (production)',
+      cmd:purified('bash', `npm run preview -- --host`)
+    }
+  ]
+
+  
 }
 
 

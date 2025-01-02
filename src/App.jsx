@@ -3,7 +3,7 @@ import './App.css'
 //import 'bootstrap-icons/font/bootstrap-icons.css';
 import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
-import { steps_purify, tsar_bomba_purify, little_boy_purify } from './purifiedText.js'
+import { steps_purify, serve_purify, tsar_bomba_purify, little_boy_purify } from './purifiedText.js'
 
 export default function App() {
   const [state, setState] = useState({
@@ -29,9 +29,12 @@ export default function App() {
 
   const steps = steps_purify(state)
 
+  const serve = serve_purify()
+
   const tsar_bomba = tsar_bomba_purify(state)
 
   const little_boy = little_boy_purify(state)
+
 
 
 
@@ -71,9 +74,11 @@ export default function App() {
       <p className='text-center'>This tutorial assumes you have already setup your <strong>remote repository!</strong></p>
       
       <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state}   />
+      <br/>
 
       <Step steps={steps} toClipBoard={toClipBoard} />
 
+      <Step steps={serve} toClipBoard={toClipBoard} />
 
     </>
   )

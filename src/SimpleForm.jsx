@@ -9,7 +9,7 @@ const spaced = {justifyContent:'space-between'}
 
 export default function SimpleForm({getInput, parseUrl, state}){
 
-  return (<>
+  return (
       <div className={container}>
         <label htmlFor="parseUrl" className={state.pwaPlug==='1' ? pwafield : optn } style={spaced}>Enter the URL to your GitHub repo
           <input type="text" name="parseUrl" onChange={getInput} onKeyUp={parseUrl}  value={state.parseUrl} /> 
@@ -72,6 +72,6 @@ export default function SimpleForm({getInput, parseUrl, state}){
 
       </div>
 
-  </>)
+  )
 
 }
