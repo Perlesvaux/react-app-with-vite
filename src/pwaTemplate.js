@@ -12,17 +12,17 @@ export default function pwaTemplate({rep, name, shortName, themeColor, descripti
       includeAssets: [], // Add static (./public) assets. i.e.: 'vite.svg'
       devOptions:{enabled:true},
       manifest: {
-        name: '${name ?? 'testing'}',
-        short_name:  '${shortName ?? 'ReactPWA'}',
-        description: '${description ?? 'A simple React PWA built with Vite'}',
-        theme_color: '${themeColor ?? '#ffffff'}',
+        name: '${name || 'testing'}',
+        short_name:  '${shortName   || 'ReactPWA'}',
+        description: '${description || 'A simple React PWA built with Vite'}',
+        theme_color: '${themeColor  || '#ffffff'}',
         icons: [
             {
               'src': 'favicon.png',
               'sizes': '192x192',
               'type': 'image/png'
             }],
-        start_url: '/${rep ?? 'ADD YOUR BASE HERE TOO'}/',
+        start_url: '/${rep || 'ADD YOUR BASE HERE TOO'}/',
         screenshots: [
         {
           src: 'screenshot-narrow.png',

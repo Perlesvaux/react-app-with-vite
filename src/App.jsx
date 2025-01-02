@@ -1,12 +1,9 @@
 import { useState } from 'react'
 import './App.css'
-import DOMPurify from 'dompurify';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
 import 'bootstrap-icons/font/bootstrap-icons.css';
 import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
-import pwaTemplate from './pwaTemplate.js'
+import { steps_purify, tsar_bomba_purify, little_boy_purify } from './purifiedText.js'
 
 function App() {
   const [state, setState] = useState({
@@ -19,60 +16,21 @@ function App() {
     prePort:"", //4173
     pwaPlug:'0',
     backend:'0',
-    name:null,
-    shortName:null,
-    themeColor:null,
-    description:null,
+    name:'',
+    shortName:'',
+    themeColor:'',
+    description:'',
 
   })
 
   const regex = /https:\/\/github\.com\/([^\/]+)\/([^\/\.]+)(\.git)?/;
 
-  const steps = [
-    { legend:'<i class="bi bi-terminal-fill fs-3"></i>  Create project', cmd: purified('bash',`npm create vite@latest`) },
-    { legend:'<i class="bi bi-terminal fs-3"></i>  Add this if yours is a PWA (don\'t forget to include the three images in /public)', cmd: purified('bash',`npm install --save-dev vite-plugin-pwa`) },
+  const steps = steps_purify(state)
 
-    { legend: '<i class="bi bi-terminal-fill fs-3"></i>  ... cd into the project.  Setup the vite.config.js', cmd: purified('bash', `echo "import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react' ${state.pwaPlug==='1' ? `\n\nimport { VitePWA } from 'vite-plugin-pwa'` : ''}
+  const tsar_bomba = tsar_bomba_purify(state)
 
-// https://vitejs.dev/config/
-export default defineConfig({
-  base:'/${state.rep}/', ${state.devPort && `\n\n  server: { port: ${state.devPort} },`} ${state.prePort && `\n\n  preview: { port: ${state.prePort} },`}
+  const little_boy = little_boy_purify(state)
 
-plugins: [react()${state.pwaPlug==='1' ? `${pwaTemplate(state)}` : ''}],
-  
-})" > vite.config.js`)}, 
-    { legend: '<i class="bi bi-terminal-fill fs-3"></i>  ... Add these scripts', cmd : purified('bash', `npm pkg set 'scripts.predeploy'='vite build' && npm pkg set 'scripts.deploy'='gh-pages -d dist'`)},
-    { legend: '<i class="bi bi-terminal-fill fs-3"></i>  ... Install this dependency' ,cmd:purified('bash', `npm install --save-dev gh-pages`) },
-    { legend: '<i class="bi bi-terminal fs-3"></i> (Optional) If needed, setup environment-based configurations.', cmd:purified('bash',`echo "VITE_API_URL=${state.devEnv}" >> .env.development && echo "VITE_API_URL=${state.proEnv}" >> .env.production && echo "const apiUrl = import.meta.env.VITE_API_URL;
-export default apiUrl;" >> ./src/config.js
-`)},
-{legend: '<i class="bi bi-filetype-jsx fs-3"></i>  (Optional) Then, import it into your src/App.jsx', cmd:purified('javascript',`//apiUrl will be ${state.devEnv} while developing locally.
-// and ${state.proEnv} in production.
-import apiUrl from './config'
-` )},
-    { legend: '<i class="bi bi-terminal-fill fs-3"></i> ... When it\'s all said and done... It\'s time to deploy!', cmd: purified('bash', `npm run deploy`) }
-  ]
-
-  const tsar_bomba = purified('bash',`echo "import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  base:'/${state.rep}/',
-  plugins: [react()],
-})" > vite.config.js && echo "VITE_API_URL=${state.devEnv}" > .env.development && echo "VITE_API_URL=${state.proEnv}" > .env.production && echo "const apiUrl = import.meta.env.VITE_API_URL;
-export default apiUrl;" > ./src/config.js && npm pkg set 'scripts.predeploy'='vite build' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm install --save-dev gh-pages`)
-
-
-  const little_boy = purified('bash',`echo "import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-
-// https://vitejs.dev/config/
-export default defineConfig({
-  base:'/${state.rep}/',
-  plugins: [react()],
-})" > vite.config.js && npm pkg set 'scripts.predeploy'='vite build' && npm pkg set 'scripts.deploy'='gh-pages -d dist' && npm install --save-dev gh-pages`)
 
 
   function getInput(e){
@@ -88,10 +46,6 @@ export default defineConfig({
   }
 
 
-  function purified(lng, mrkp){
-    return DOMPurify.sanitize(hljs.highlight(mrkp, {language: lng}).value)
-    // return DOMPurify.sanitize(mrkp)
-  }
 
 
   function toClipBoard(e) {
