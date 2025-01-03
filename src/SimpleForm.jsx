@@ -1,4 +1,7 @@
 import styles from './SimpleForm.module.css'
+//import OnSVG from './OnSVG.jsx'
+//import OffSVG from './OffSVG.jsx'
+import FlipButton from './FlipButton.jsx'
 
 const ghpgs = `${styles.optn} text-center badge text-bg-danger fs-6`
 const optn = `${styles.optn} text-center badge text-bg-dark fs-6`
@@ -7,7 +10,7 @@ const bckndfield = `${styles.optn} text-center badge text-bg-light fs-6`
 const container = `${styles.container} container text-bg-dark`
 const spaced = {justifyContent:'space-between'}
 
-export default function SimpleForm({getInput, parseUrl, state}){
+export default function SimpleForm({getInput, parseUrl, state, flip}){
 
   return (
       <div className={container}>
@@ -20,7 +23,10 @@ export default function SimpleForm({getInput, parseUrl, state}){
         <label htmlFor="prePort" className={optn} style={spaced}>Preview PORT 
           <input type="text" name="prePort" onChange={getInput} value={state.prePort}/> 
         </label>
+
+
         <label htmlFor="backend" className={bckndfield} style={spaced}>Is there a backend? 
+          <FlipButton name="backend" value={state.backend} flip={flip}/>
           <label> NO <input type="radio" id="backend0" name="backend" value="0"  onChange={getInput} checked={state.backend === '0'} /></label>
           <label> YES <input type="radio" id="backend1" name="backend" value="1"  onChange={getInput} checked={state.backend === '1'}/></label>
         </label>

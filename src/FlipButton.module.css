@@ -1,0 +1,10 @@
+.on:hover {
+  fill: darkseagreen;
+  cursor: pointer;
+}
+
+
+.off:hover {
+  fill: slategray;
+  cursor: pointer;
+}

@@ -62,6 +62,20 @@ export default function App() {
     dispatch({type:'set', field:e.target.name, value:e.target.value})
   }
 
+  function flip(field) {
+    //console.log(e.currentTarget.value)
+    //console.log(e.currentTarget.name)
+    //console.log(e.currentTarget)
+    //console.log(e.target)
+    //console.log(e.target.value)
+    
+    //dispatch({type:'set', field:e.currentTarget.name, value: e.currentTarget.value==='0' ? '1' : '0' })
+    //dispatch({type:'set', field:e.target.name, value: e.target.value==='0' ? '1' : '0' })
+    dispatch({type:'set', field:field, value:state[field] ==='0' ? '1' : '0' })
+
+    
+  }
+
 
   function toClipBoard(copied) {
     try {
@@ -83,7 +97,7 @@ export default function App() {
       <h1 className='text-center'>Quick Start!</h1>
       <p className='text-center'>This tutorial assumes you have already setup your <strong>remote repository!</strong></p>
       
-      <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state}   />
+      <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state} flip={flip} />
       <br/>
 
       <Step steps={steps} toClipBoard={toClipBoard} />
