@@ -1,12 +1,11 @@
-import { useState } from 'react'
+import { useReducer } from 'react'
 import './App.css'
 //import 'bootstrap-icons/font/bootstrap-icons.css';
 import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
 import { steps_purify, serve_purify, tsar_bomba_purify, little_boy_purify } from './purifiedText.js'
 
-export default function App() {
-  const [state, setState] = useState({
+const initialState = {
     usr:"USERNAME",
     rep:"REPOSITORY_NAME",
     parseUrl:"",
@@ -23,41 +22,52 @@ export default function App() {
     themeColor:'',
     description:'',
 
-  })
+  }
 
+function reducer(state, action){
+  switch(action.type){
+    case "set":
+    return { ...state, [action.field]:action.value }
+
+  }
+}
+
+export default function App() {
+
+  const [state, dispatch] = useReducer(reducer, initialState)
   const regex = /https:\/\/github\.com\/([^\/]+)\/([^\/\.]+)(\.git)?/;
-
   const steps = steps_purify(state)
-
   const serve = serve_purify()
-
   const tsar_bomba = tsar_bomba_purify(state)
-
   const little_boy = little_boy_purify(state)
 
 
 
 
-  function getInput(e){
-    setState({...state, [e.target.name]:e.target.value})
-  }
+  //function getInput(e){
+  //  setState({...state, [e.target.name]:e.target.value})
+  //}
   
   function parseUrl(e){
     const url = state[e.target.name]
     const match = url.match(regex);
     let username = (match) ? match[1] : '' 
     let repositoryName = (match) ? match[2] : '' 
-    setState({...state, usr:username, rep: repositoryName})
+    //setState({...state, usr:username, rep: repositoryName})
+    dispatch({type:'set', field:'usr', value:username })
+    dispatch({type:'set', field:'rep', value:repositoryName })
+  }
+
+  function getInput(e){
+    dispatch({type:'set', field:e.target.name, value:e.target.value})
   }
 
 
-
-
-  function toClipBoard(e) {
+  function toClipBoard(copied) {
     try {
       /* Resolved - text copied to clipboard successfully */
-      navigator.clipboard.writeText(e.currentTarget.textContent);
-      //console.log(e.currentTarget.textContent)
+      navigator.clipboard.writeText(copied);
+      console.log(copied)
       // console.log(e.currentTarget.textContent);
     } catch (err) {
       console.error('Failed to copy: ', err);

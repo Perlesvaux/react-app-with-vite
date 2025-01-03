@@ -6,9 +6,9 @@ export default function Step({steps, toClipBoard}){
         <div key={indx}>
           <span  style={{display:"flex", alignItems:"center" }}>
             {step.legend && step.svg}
-            <h6 className='text-muted'   dangerouslySetInnerHTML={{__html:step.legend}}></h6> 
+            <h6 className='text-muted' dangerouslySetInnerHTML={{__html:step.legend}}></h6> 
           </span>
-        { step.legend && (<pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:step.cmd}}></code></pre>)}
+        { step.legend && (<pre><code onClick={()=>toClipBoard(step.clipboard)} className='text-start btn btn-dark' dangerouslySetInnerHTML={{__html:step.cmd}}></code></pre>) }
         </div>)
       }
   </div>)
