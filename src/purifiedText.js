@@ -1,7 +1,21 @@
+import hljs from 'highlight.js/lib/core'; // Core functionality
+import javascript from 'highlight.js/lib/languages/javascript'; // JavaScript syntax
+import bash from 'highlight.js/lib/languages/bash'; // Bash syntax
+// Register only those languages we'll be using
+hljs.registerLanguage('javascript', javascript);
+hljs.registerLanguage('bash', bash);
+
+// Finally, import the css style to be used
+import 'highlight.js/styles/idea.css';
+//import 'highlight.js/styles/github.css';
+//import 'highlight.js/styles/atom-one-dark.css';
+
+
+
+
 import pwaTemplate from './pwaTemplate.js'
 import DOMPurify from 'dompurify';
-import hljs from 'highlight.js';
-import 'highlight.js/styles/github.css';
+//import hljs from 'highlight.js';
 
 import CodeSVG from './CodeSVG.jsx'
 import JsxTypeSVG from './JsxTypeSVG.jsx'
@@ -129,7 +143,8 @@ plugins: [react()],
 
 
 function purified(lng, mrkp){
-  return DOMPurify.sanitize(hljs.highlight(mrkp, {language: lng}).value)
+  return DOMPurify.sanitize(hljs.highlight(mrkp, {language: 'bash'}).value)
+  //return DOMPurify.sanitize(mrkp)
 // return DOMPurify.sanitize(mrkp)
 }
 

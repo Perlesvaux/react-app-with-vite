@@ -1,0 +1,9 @@
+.eachstep {
+  animation-name: example;
+  animation-duration: 4s; 
+}
+
+@keyframes example {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
