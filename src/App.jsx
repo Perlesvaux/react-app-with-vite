@@ -3,6 +3,7 @@ import './App.css'
 //import 'bootstrap-icons/font/bootstrap-icons.css';
 import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
+import Togglers from './Togglers.jsx'
 import { steps_purify, serve_purify, tsar_bomba_purify, little_boy_purify } from './purifiedText.js'
 
 const initialState = {
@@ -96,6 +97,8 @@ export default function App() {
 
       <h1 className='text-center'>Quick Start!</h1>
       <p className='text-center'>This tutorial assumes you have already setup your <strong>remote repository!</strong></p>
+
+      <Togglers state={state} flip={flip}/>
       
       <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state} flip={flip} />
       <br/>

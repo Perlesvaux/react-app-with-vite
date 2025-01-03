@@ -1,10 +1,12 @@
 .on:hover {
   fill: darkseagreen;
   cursor: pointer;
+  /*width:1px;*/
 }
 
 
 .off:hover {
   fill: slategray;
   cursor: pointer;
+  /*width:1px;*/
 }

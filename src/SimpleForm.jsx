@@ -1,7 +1,7 @@
 import styles from './SimpleForm.module.css'
 //import OnSVG from './OnSVG.jsx'
 //import OffSVG from './OffSVG.jsx'
-import FlipButton from './FlipButton.jsx'
+//import FlipButton from './FlipButton.jsx'
 
 const ghpgs = `${styles.optn} text-center badge text-bg-danger fs-6`
 const optn = `${styles.optn} text-center badge text-bg-dark fs-6`
@@ -10,7 +10,7 @@ const bckndfield = `${styles.optn} text-center badge text-bg-light fs-6`
 const container = `${styles.container} container text-bg-dark`
 const spaced = {justifyContent:'space-between'}
 
-export default function SimpleForm({getInput, parseUrl, state, flip}){
+export default function SimpleForm({getInput, parseUrl, state}){
 
   return (
       <div className={container}>
@@ -25,11 +25,6 @@ export default function SimpleForm({getInput, parseUrl, state, flip}){
         </label>
 
 
-        <label htmlFor="backend" className={bckndfield} style={spaced}>Is there a backend? 
-          <FlipButton name="backend" value={state.backend} flip={flip}/>
-          <label> NO <input type="radio" id="backend0" name="backend" value="0"  onChange={getInput} checked={state.backend === '0'} /></label>
-          <label> YES <input type="radio" id="backend1" name="backend" value="1"  onChange={getInput} checked={state.backend === '1'}/></label>
-        </label>
         {
           state.backend==='1' &&
           (<>
@@ -47,10 +42,6 @@ export default function SimpleForm({getInput, parseUrl, state, flip}){
 
 
 
-        <label htmlFor="pwaPlug" className={pwafield} style={spaced}>Will this be a PWA? 
-          <label> NO <input type="radio" id="pwaPlug0" name="pwaPlug" value="0"  onChange={getInput} checked={state.pwaPlug === '0'} /></label>
-          <label> YES <input type="radio" id="pwaPlug1" name="pwaPlug" value="1"  onChange={getInput} checked={state.pwaPlug === '1'}/></label>
-        </label>
     {
       state.pwaPlug==='1' && 
       (<>
@@ -70,10 +61,6 @@ export default function SimpleForm({getInput, parseUrl, state, flip}){
       </>)
     }
 
-        <label htmlFor="ghpages" className={ghpgs} style={spaced}>GitHub Pages? 
-          <label> NO <input type="radio" id="ghpages0" name="ghpages" value="0"  onChange={getInput} checked={state.ghpages === '0'} /></label>
-          <label> YES <input type="radio" id="ghpages1" name="ghpages" value="1"  onChange={getInput} checked={state.ghpages === '1'}/></label>
-        </label>
 
 
       </div>
