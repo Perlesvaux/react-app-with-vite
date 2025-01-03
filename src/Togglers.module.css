@@ -1,0 +1,17 @@
+.container {
+  background-color: lightsalmon;
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content:space-around ;
+  align-items: center;
+
+}
+
+.container label {
+  background-color: salmon;
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content:space-between ;
+  align-items: center;
+  column-gap: 50px;
+}

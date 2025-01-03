@@ -42,12 +42,6 @@ export default function App() {
   const tsar_bomba = tsar_bomba_purify(state)
   const little_boy = little_boy_purify(state)
 
-
-
-
-  //function getInput(e){
-  //  setState({...state, [e.target.name]:e.target.value})
-  //}
   
   function parseUrl(e){
     const url = state[e.target.name]
@@ -64,12 +58,6 @@ export default function App() {
   }
 
   function flip(field) {
-    //console.log(e.currentTarget.value)
-    //console.log(e.currentTarget.name)
-    //console.log(e.currentTarget)
-    //console.log(e.target)
-    //console.log(e.target.value)
-    
     //dispatch({type:'set', field:e.currentTarget.name, value: e.currentTarget.value==='0' ? '1' : '0' })
     //dispatch({type:'set', field:e.target.name, value: e.target.value==='0' ? '1' : '0' })
     dispatch({type:'set', field:field, value:state[field] ==='0' ? '1' : '0' })
