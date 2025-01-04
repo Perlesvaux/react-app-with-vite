@@ -5,33 +5,22 @@ import CheckSVG from './CheckSVG.jsx'
 import {useState} from 'react'
 export default function Copy({ onClick }){
 
-  const [svg, setSvg] = useState(
-    <CopySVG 
+  const [svg, setSvg] = useState(true)
+
+  function flipped(){
+    setSvg(false)
+    setTimeout(() => setSvg(true), 1492); // Change back after 2 seconds
+  }
+  
+  return svg 
+  ? <CopySVG 
       className={styles.copy} 
       fill="silver" 
       size="33px" 
-      onClick={onClick}  
+      onClick={()=>{onClick(); flipped()}} 
+    /> 
+  : <CheckSVG 
+      fill="palegreen" 
+      size="33px" 
     />
-  )
-
-
-function flipped (){
-    setSvg(
-      <CheckSVG
-        fill="palegreen"
-        size="33px"
-      />
-    )
-    setTimeout(() => setSvg(
-      <CopySVG 
-        className={styles.copy} 
-        fill="silver" 
-        size="33px" 
-        onClick={onClick}  
-      />
-    ), 2000); // Change back after 2 seconds
-  }
-
-  
-  return <button onClick={flipped}> {svg} </button>
 }

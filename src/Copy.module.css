@@ -3,15 +3,6 @@
 }
 
 .copy:active {
-  fill:green;
-  animation-name: example;
-  animation-duration: 4s; 
-
+  fill:darkseagreen;
 }
-
-@keyframes example {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
 
