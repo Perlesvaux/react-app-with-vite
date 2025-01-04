@@ -1,4 +1,5 @@
 import { useReducer } from 'react'
+//import { useReducer, useEffect } from 'react'
 import './App.css'
 //import 'bootstrap-icons/font/bootstrap-icons.css';
 import Step from './Step.jsx'
@@ -39,8 +40,28 @@ export default function App() {
   const regex = /https:\/\/github\.com\/([^\/]+)\/([^\/\.]+)(\.git)?/;
   const steps = steps_purify(state)
   const serve = serve_purify()
-  const tsar_bomba = tsar_bomba_purify(state)
-  const little_boy = little_boy_purify(state)
+  //const tsar_bomba = tsar_bomba_purify(state)
+  //const little_boy = little_boy_purify(state)
+
+  //useEffect(() => {
+  //  function updateTheme(){
+  //    const isDarkMode = window.matchMedia('(prefers-color-scheme:dark)').matches
+  //    if (isDarkMode){
+  //      import('highlight.js/styles/felipec.css'); // Dark mode style
+  //    } else {
+  //      import('highlight.js/styles/github.css'); // Light mode style
+  //    }
+  //  }
+  //
+  //  updateTheme()
+  //
+  //  const mediaQuery = window.matchMedia('(prefers-color-scheme:dark)')
+  //  mediaQuery.addEventListener('change', updateTheme)
+  //
+  //  return ()=> mediaQuery.removeEventListener('change', updateTheme)
+  //
+  //} )
+  
 
   
   function parseUrl(e){

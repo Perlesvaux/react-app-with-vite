@@ -29,7 +29,7 @@ const terminal_blue  = TerminalSVG(  { fill:"DodgerBlue", size:"50px" } )
 const terminal_red   = TerminalSVG(  { fill:"Crimson", size:"50px" } )
 const bolt           = BoltSVG(  { fill:"Gold", size:"50px" } )
 const code_green     = CodeSVG(  { fill:"DarkSeaGreen", size:"50px" } )
-const obj_purple     = ObjSVG(  { fill:"Purple", size:"50px" } )
+const obj_purple     = ObjSVG(  { fill:"DarkOrchid", size:"50px" } )
 
 
 export function steps_purify(state){
