@@ -1,5 +1,6 @@
 .copy:hover {
   fill: slategrey;
+  cursor: pointer;
 }
 
 .copy:active {

@@ -8,7 +8,8 @@ hljs.registerLanguage('bash', bash);
 // Finally, import the css style to be used
 //import 'highlight.js/styles/idea.css';
 //import 'highlight.js/styles/github.css';
-import 'highlight.js/styles/atom-one-dark.css';
+//import 'highlight.js/styles/atom-one-dark.css';
+import 'highlight.js/styles/felipec.css';
 
 
 
@@ -54,7 +55,7 @@ const deploy_cmd = `npm run deploy`
   return [
     {
       svg: bolt,
-      legend:'  Create project', 
+      legend:'Create project', 
       cmd: purified('bash', create_vite_project), 
       clipboard: create_vite_project,
     },
@@ -91,7 +92,7 @@ const deploy_cmd = `npm run deploy`
     },
     {
       svg:terminal_black,
-      legend:  state.backend==='0'? '' :  '... This variable below stores its value', 
+      legend: state.backend==='0'? '' :  '... This variable below stores its value', 
       cmd:purified('javascript', env_var),
       clipboard: env_var,
     },

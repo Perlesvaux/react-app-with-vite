@@ -9,14 +9,14 @@ export default function Step({steps, toClipBoard}){
         <div key={indx}>
           { step.legend &&
             (<>
-              <span  style={{display:"flex", alignItems:"center" }}>
+              <div className={styles.legend}>
                 {step.svg}
-                <h6 className='text-muted' dangerouslySetInnerHTML={{__html:step.legend}}></h6> 
-              </span>
-              <pre><code className='text-start btn btn-dark' dangerouslySetInnerHTML={{__html:step.cmd}}></code>
+                <div dangerouslySetInnerHTML={{__html:step.legend}} /> 
+              </div>
+              <pre>
+                <code dangerouslySetInnerHTML={{__html:step.cmd}} />
                 <Copy onClick={()=>toClipBoard(step.clipboard)}/>
               </pre>
-
             </>)
           }
         </div>)

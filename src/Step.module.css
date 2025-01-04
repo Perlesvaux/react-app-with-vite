@@ -9,15 +9,25 @@
 }
 
 
+.legend {
+  display: flex; 
+  align-items: center; 
+  flex-direction: row;
+  column-gap: 1em;
+}
+
 pre {
   border-radius:20px;
+  overflow-x: auto;
   padding: 10px 10px 10px 10px;
-  background-color: darkslategrey;
-  display: flex;
+  background-color: #404040;
+  overflow-x: hidden;
+  /*display: flex;*/
   /*flex-direction: column;*/
-  justify-content:space-between ;
+  /*justify-content:space-between ;*/
   align-items: center;
   /*align-items: initial;*/
   /*column-gap: 50px;*/
-  
+  display:grid;
+  grid-template-columns: 95% 5%;
 }
