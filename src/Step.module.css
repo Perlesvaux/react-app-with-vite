@@ -9,3 +9,15 @@
 }
 
 
+pre {
+  border-radius:20px;
+  padding: 10px 10px 10px 10px;
+  background-color: darkslategrey;
+  display: flex;
+  /*flex-direction: column;*/
+  justify-content:space-between ;
+  align-items: center;
+  /*align-items: initial;*/
+  /*column-gap: 50px;*/
+  
+}
