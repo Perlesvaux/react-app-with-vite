@@ -48,7 +48,7 @@ plugins: [react()${state.pwaPlug==='1' ? `${pwaTemplate(state)}` : ''}],
 const ghpages_scripts =  `npm pkg set 'scripts.predeploy'='vite build' && npm pkg set 'scripts.deploy'='gh-pages -d dist'`
 const install_ghpages =  `npm install --save-dev gh-pages`
 const include_statics_in_public = `npm install --save-dev vite-plugin-pwa`
-const env_variables = `echo "VITE_${state.envVar.toUpperCase()}=${state.devEnv}" >> .env.development && echo "VITE_${state.envVar.toUpperCase()}=${state.proEnv}" >> .env.production`  
+const env_variables = `echo "VITE_${state.envVar.toUpperCase()}=${state.devEnv}" >> .env.development && \\\necho "VITE_${state.envVar.toUpperCase()}=${state.proEnv}" >> .env.production`  
 const env_var = `import.meta.env.VITE_${state.envVar.toUpperCase()}`   
 const deploy_cmd = `npm run deploy`
 
