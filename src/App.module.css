@@ -20,5 +20,6 @@
   display: grid;
   grid-template-columns: var(--menu-width) 50%;
   column-gap: var(--tutorial-gap);
+  /*background-color: purple;*/
 }
 

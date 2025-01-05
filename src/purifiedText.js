@@ -24,12 +24,13 @@ import TerminalSVG from './TerminalSVG.jsx'
 import BoltSVG from './BoltSVG.jsx'
 import ObjSVG from './ObjSVG.jsx'
 
-const terminal_black = TerminalSVG(  { fill:"AntiqueWhite", size:"50px" } )
-const terminal_blue  = TerminalSVG(  { fill:"DodgerBlue", size:"50px" } )
-const terminal_red   = TerminalSVG(  { fill:"Salmon", size:"50px" } )
-const bolt           = BoltSVG(  { fill:"Gold", size:"50px" } )
-const code_green     = CodeSVG(  { fill:"DarkSeaGreen", size:"50px" } )
-const obj_purple     = ObjSVG(  { fill:"DarkOrchid", size:"50px" } )
+const size_svg = "2.1vw";
+const terminal_black = TerminalSVG(  { fill:"AntiqueWhite", size:size_svg } )
+const terminal_blue  = TerminalSVG(  { fill:"DodgerBlue",   size:size_svg } )
+const terminal_red   = TerminalSVG(  { fill:"Salmon",       size:size_svg } )
+const bolt           = BoltSVG(      { fill:"Gold",         size:size_svg } )
+const code_green     = CodeSVG(      { fill:"DarkSeaGreen", size:size_svg } )
+const obj_purple     = ObjSVG(       { fill:"DarkOrchid",   size:size_svg } )
 
 
 export function steps_purify(state){

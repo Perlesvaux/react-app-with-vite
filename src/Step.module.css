@@ -15,12 +15,12 @@ pre {
   background-color: #404040;
   overflow-x: hidden;
   align-items: center;
-  display:grid;
-  grid-template-columns: 95% 5%;
+  /*display:grid;*/
+  /*grid-template-columns: 95% 5%;*/
 }
 
 .block {
   background-color: #333333;
   border-radius: 20px;
-  /*width: 700px;*/
+  width: var(--step-width);
 }

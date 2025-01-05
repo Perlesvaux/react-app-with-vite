@@ -18,6 +18,7 @@
 
 .container > label > input {
   display: block; /* Optional: Ensures input spans the full width if needed */
-  width: 90%; /* Optional: For full-width inputs */
+  width: 100%; /* Optional: For full-width inputs */
+  box-sizing: border-box;
 }
 
