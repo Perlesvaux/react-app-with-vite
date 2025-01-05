@@ -1,15 +1,14 @@
 .container {
-  background-color: cyan;
   display: flex;
   flex-direction: column;
-  row-gap: 5px;
+  row-gap: var(--menu-row-gap);
   width: var(--menu-width);
 }
 
 .container > label {
   display: grid;
   grid-template-columns: 60% 40%;
-  background-color: orange;
+  background-color: #586674;
 }
 
 .container > label  {
@@ -18,7 +17,6 @@
 }
 
 .container > label > input {
-  background-color: green;
   display: block; /* Optional: Ensures input spans the full width if needed */
   width: 90%; /* Optional: For full-width inputs */
 }
