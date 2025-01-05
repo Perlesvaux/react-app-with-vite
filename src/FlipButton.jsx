@@ -14,7 +14,7 @@ export default function FlipButton({name, value, flip}){
         className={styles.off} 
         onClick={()=>flip(name)} 
       >
-       <OffSVG fill="DimGray" size="33px" />
+       <OffSVG fill="AntiqueWhite" size="33px" />
      </button>
          
 }

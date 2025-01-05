@@ -4,13 +4,14 @@
 }
 
 .off:hover > svg {
-  fill: gray;
+  fill: gainsboro;
   cursor: pointer;
 }
 
 button {
   display: flex;
-  background-color: rgba(255,255,255,0.1) !important;
+  /*background-color: rgba(255,255,255,0.1) !important;*/
+  background-color: transparent !important;
   width: 33px;
   width: 33px !important;
   padding: 0 !important;

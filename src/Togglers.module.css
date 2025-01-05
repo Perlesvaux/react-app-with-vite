@@ -4,7 +4,7 @@
 }
 
 .container label {
-  background-color: plum		;
+  background-color: DimGray		;
   display: grid;
   grid-template-columns: 60% 40%;
   padding: var(--menu-padding);

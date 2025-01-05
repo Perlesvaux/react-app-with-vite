@@ -19,6 +19,6 @@
 .tutorial {
   display: grid;
   grid-template-columns: var(--menu-width) 50%;
-  column-gap: 10px;
+  column-gap: var(--tutorial-gap);
 }
 

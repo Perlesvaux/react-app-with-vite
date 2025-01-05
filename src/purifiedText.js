@@ -24,9 +24,9 @@ import TerminalSVG from './TerminalSVG.jsx'
 import BoltSVG from './BoltSVG.jsx'
 import ObjSVG from './ObjSVG.jsx'
 
-const terminal_black = TerminalSVG(  { fill:"Black", size:"50px" } )
+const terminal_black = TerminalSVG(  { fill:"AntiqueWhite", size:"50px" } )
 const terminal_blue  = TerminalSVG(  { fill:"DodgerBlue", size:"50px" } )
-const terminal_red   = TerminalSVG(  { fill:"Crimson", size:"50px" } )
+const terminal_red   = TerminalSVG(  { fill:"Salmon", size:"50px" } )
 const bolt           = BoltSVG(  { fill:"Gold", size:"50px" } )
 const code_green     = CodeSVG(  { fill:"DarkSeaGreen", size:"50px" } )
 const obj_purple     = ObjSVG(  { fill:"DarkOrchid", size:"50px" } )
