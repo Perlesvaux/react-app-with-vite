@@ -1,29 +1,12 @@
 .container {
   background-color: lightsalmon;
-  /*padding: 10px 10px 33px 33px;*/
   width: var(--menu-width);
-  
-  /*display: flex;*/
-  /*flex-direction: column;*/
-
-  /*justify-content:space-around ;*/
-  /*align-items: center;*/
-  /*position: fixed;*/
-  /**/
-  /*top: 0;*/
-  /*left: 0;*/
-
 }
 
 .container label {
   display: grid;
   grid-template-columns: 60% 40%;
   padding: var(--menu-padding);
-
-  /*background-color: blue;*/
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*justify-content:space-between ;*/
   align-items: center;
   column-gap: 10px;
 }

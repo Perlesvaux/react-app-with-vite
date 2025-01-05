@@ -101,29 +101,24 @@ export default function App() {
 
 
   return (
-    <>
-      {console.log(state)}
-
-
       <main className={styles.tutorial}>
 
-        <section className={styles.menu}>
-          <article className={styles.togglers}>
+      {console.log(state)}
+        <section>
+          <aside className={styles.menu}>
             <Togglers state={state} flip={flip}/>
             <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state} flip={flip} />
-          </article>
+          </aside>
         </section>
         
         <section> 
-      <h2 className='text-center'>Quick Start!</h2>
-      <p className='text-center'>This tutorial assumes you have already setup your <strong>remote repository!</strong></p>
+          <h1 className='text-center'>Quick Start!</h1>
+          <p className='text-center'>This tutorial assumes you have already setup your <strong>remote repository!</strong></p>
           <Step steps={steps} toClipBoard={toClipBoard} />
           <Step steps={serve} toClipBoard={toClipBoard} />
         </section>
 
       </main>
-
-    </>
   )
 }
 

@@ -4,7 +4,6 @@
   flex-direction: column;
   row-gap: 5px;
   width: var(--menu-width);
-
 }
 
 .container > label {
@@ -23,7 +22,4 @@
   display: block; /* Optional: Ensures input spans the full width if needed */
   width: 90%; /* Optional: For full-width inputs */
 }
-/*.optn {*/
-/**/
-/*}*/
 
