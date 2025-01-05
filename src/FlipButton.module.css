@@ -1,12 +1,20 @@
-.on:hover {
+.on:hover > svg {
   fill: darkseagreen;
   cursor: pointer;
-  /*width:1px;*/
 }
 
-
-.off:hover {
-  fill: slategray;
+.off:hover > svg {
+  fill: gray;
   cursor: pointer;
-  /*width:1px;*/
 }
+
+button {
+  display: flex;
+  background-color: rgba(255,255,255,0.2) !important;
+  width: 33px;
+  width: 33px !important;
+  padding: 0 !important;
+  margin: auto;
+  align-items: center;
+}
+

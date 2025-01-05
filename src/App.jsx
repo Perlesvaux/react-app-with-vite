@@ -1,6 +1,6 @@
 import { useReducer } from 'react'
 //import { useReducer, useEffect } from 'react'
-import './App.css'
+import styles from './App.module.css'
 //import 'bootstrap-icons/font/bootstrap-icons.css';
 import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
@@ -104,17 +104,24 @@ export default function App() {
     <>
       {console.log(state)}
 
-      <h1 className='text-center'>Quick Start!</h1>
+
+      <main className={styles.tutorial}>
+
+        <section className={styles.menu}>
+          <article className={styles.togglers}>
+            <Togglers state={state} flip={flip}/>
+            <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state} flip={flip} />
+          </article>
+        </section>
+        
+        <section> 
+      <h2 className='text-center'>Quick Start!</h2>
       <p className='text-center'>This tutorial assumes you have already setup your <strong>remote repository!</strong></p>
+          <Step steps={steps} toClipBoard={toClipBoard} />
+          <Step steps={serve} toClipBoard={toClipBoard} />
+        </section>
 
-      <Togglers state={state} flip={flip}/>
-      
-      <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state} flip={flip} />
-      <br/>
-
-      <Step steps={steps} toClipBoard={toClipBoard} />
-
-      <Step steps={serve} toClipBoard={toClipBoard} />
+      </main>
 
     </>
   )

@@ -1,0 +1,19 @@
+.menu {
+  background-color: silver;
+
+  /*padding: 10px 10px 10px 10px;*/
+}
+
+.togglers {
+  position: fixed;
+  width: 45vh;
+}
+          
+
+.tutorial {
+  display: grid;
+  grid-template-columns: var(--menu-width) 50%;
+  column-gap: 10px;
+  /*background-color: lightblue;*/
+}
+

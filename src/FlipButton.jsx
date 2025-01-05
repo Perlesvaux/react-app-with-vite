@@ -3,15 +3,18 @@ import OnSVG from './OnSVG.jsx'
 import OffSVG from './OffSVG.jsx'
 
 export default function FlipButton({name, value, flip}){
-  return (value==='1'
-        ? <OnSVG fill="MediumSeaGreen" size="50px" cls={styles.on} 
-            name={name} 
-            value={value} 
-            onClick={()=>flip(name)} 
-        />
-        : <OffSVG fill="gray" size="50px"  cls={styles.off} 
-            name={name} 
-            value={value} 
-            onClick={()=>flip(name)} 
-        />)
+  return value==='1'
+    ? <button  
+        className={styles.on} 
+        onClick={()=>flip(name)} 
+      > 
+        <OnSVG fill="MediumSeaGreen" size="33px"  />
+      </button>
+    : <button
+        className={styles.off} 
+        onClick={()=>flip(name)} 
+      >
+       <OffSVG fill="DimGray" size="33px" />
+     </button>
+         
 }

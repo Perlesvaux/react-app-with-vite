@@ -14,7 +14,7 @@ export default function SimpleForm({getInput, parseUrl, state}){
 
   return (
       <div className={container}>
-        <label htmlFor="parseUrl" className={state.pwaPlug==='1' ? pwafield : optn } style={spaced}>Enter the URL to your GitHub repo
+        <label htmlFor="parseUrl" className={state.pwaPlug==='1' ? pwafield : optn } style={spaced}>URL to your GitHub repo
           <input type="text" name="parseUrl" onChange={getInput} onKeyUp={parseUrl}  value={state.parseUrl} /> 
         </label>
         <label htmlFor="devPort" className={optn} style={spaced}>Development PORT 
@@ -25,7 +25,7 @@ export default function SimpleForm({getInput, parseUrl, state}){
         </label>
 
 
-        {
+      {
           state.backend==='1' &&
           (<>
         <label htmlFor="envVar" className={bckndfield} style={spaced}>Give your env variable a name

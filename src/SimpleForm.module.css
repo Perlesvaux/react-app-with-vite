@@ -1,14 +1,29 @@
-.optn {
-  display:flex;
-  justify-content: 'space-between';
-  border-radius: 0px;
+.container {
+  background-color: cyan;
+  display: flex;
+  flex-direction: column;
+  row-gap: 5px;
+  width: var(--menu-width);
+
 }
 
-.container {
-  /*width:600px;*/
-  width:80vh;
-  border-radius: 10px;
-  padding-bottom: 11px;
-  padding-top: 11px;
+.container > label {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  background-color: orange;
 }
+
+.container > label  {
+  display: block; /* Makes the label behave like a block element */
+  padding:var(--menu-padding);
+}
+
+.container > label > input {
+  background-color: green;
+  display: block; /* Optional: Ensures input spans the full width if needed */
+  width: 90%; /* Optional: For full-width inputs */
+}
+/*.optn {*/
+/**/
+/*}*/
 

@@ -1,40 +1,20 @@
-.eachstep {
-  animation-name: example;
-  animation-duration: 4s; 
-}
-
-@keyframes example {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
 
 .legend {
-  /*display: flex; */
   padding: 5px 0px 0px 10px;
   border-radius: 20px;
   background-color: #333333;
-  /*background-color: red;*/
   align-items: center; 
-  /*flex-direction: row;*/
-  /*column-gap: 1em;*/
   display: grid;
   grid-template-columns: 7% 85% 8%;
 }
 
 pre {
-  /*border-radius:20px;*/
   border-radius: 0 0 20px 20px;
   overflow-x: auto;
-  padding: 10px 0px 33px 33px;
+  padding: 11px 0px 11px 33px;
   background-color: #404040;
   overflow-x: hidden;
-  /*display: flex;*/
-  /*flex-direction: column;*/
-  /*justify-content:space-between ;*/
   align-items: center;
-  /*align-items: initial;*/
-  /*column-gap: 50px;*/
   display:grid;
   grid-template-columns: 95% 5%;
 }
@@ -42,4 +22,5 @@ pre {
 .block {
   background-color: #333333;
   border-radius: 20px;
+  /*width: 700px;*/
 }
