@@ -14,15 +14,15 @@
   -moz-osx-font-smoothing: grayscale;
 
   /*see src/color.module.css*/ 
-  --bg-envvars: LightPink;
-  --bg-pwa: DodgerBlue;
+  --bg-envvars: Plum;
+  --bg-pwa: LightSkyBlue;
   --bg-ghpages:Salmon;
   --bg-init: Gold;
   --bg-serve: DarkSeaGreen; 
   --bg-config: Violet; 
 
-  --hover-envvars: Pink;
-  --hover-pwa: LightSkyBlue;
+  --hover-envvars: Thistle;
+  --hover-pwa: DodgerBlue;
   --hover-ghpages:LightSalmon;
   --hover-init: Bisque;
   --hover-serve: SeaGreen; 
