@@ -13,11 +13,29 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /*see src/color.module.css*/ 
+  --bg-envvars: LightPink;
+  --bg-pwa: DodgerBlue;
+  --bg-ghpages:Salmon;
+  --bg-init: Gold;
+  --bg-serve: DarkSeaGreen; 
+  --bg-config: Violet; 
 
-  
+  --hover-envvars: Pink;
+  --hover-pwa: LightSkyBlue;
+  --hover-ghpages:LightSalmon;
+  --hover-init: Bisque;
+  --hover-serve: SeaGreen; 
+  --hover-config: Plum; 
+
+  --toggler-size:50px;
+
+
+
+
 
   --menu-width:15vw;
-  --menu-padding:0 1vw 1vw 1vw;
+  --menu-padding:0 1vw 0.4vw 1vw;
   --menu-row-gap:5px;
   --tutorial-gap:20px;
   --step-width:700px;

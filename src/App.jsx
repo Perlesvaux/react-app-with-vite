@@ -2,6 +2,7 @@ import { useReducer } from 'react'
 //import { useReducer, useEffect } from 'react'
 import styles from './App.module.css'
 //import 'bootstrap-icons/font/bootstrap-icons.css';
+import pezote from '/favicon.ico'
 import Step from './Step.jsx'
 import SimpleForm from './SimpleForm.jsx'
 import Togglers from './Togglers.jsx'
@@ -23,7 +24,6 @@ const initialState = {
     shortName:'',
     themeColor:'',
     description:'',
-
   }
 
 function reducer(state, action){
@@ -40,29 +40,6 @@ export default function App() {
   const regex = /https:\/\/github\.com\/([^\/]+)\/([^\/\.]+)(\.git)?/;
   const steps = steps_purify(state)
   const serve = serve_purify()
-  //const tsar_bomba = tsar_bomba_purify(state)
-  //const little_boy = little_boy_purify(state)
-
-  //useEffect(() => {
-  //  function updateTheme(){
-  //    const isDarkMode = window.matchMedia('(prefers-color-scheme:dark)').matches
-  //    if (isDarkMode){
-  //      import('highlight.js/styles/felipec.css'); // Dark mode style
-  //    } else {
-  //      import('highlight.js/styles/github.css'); // Light mode style
-  //    }
-  //  }
-  //
-  //  updateTheme()
-  //
-  //  const mediaQuery = window.matchMedia('(prefers-color-scheme:dark)')
-  //  mediaQuery.addEventListener('change', updateTheme)
-  //
-  //  return ()=> mediaQuery.removeEventListener('change', updateTheme)
-  //
-  //} )
-  
-
   
   function parseUrl(e){
     const url = state[e.target.name]
@@ -79,13 +56,8 @@ export default function App() {
   }
 
   function flip(field) {
-    //dispatch({type:'set', field:e.currentTarget.name, value: e.currentTarget.value==='0' ? '1' : '0' })
-    //dispatch({type:'set', field:e.target.name, value: e.target.value==='0' ? '1' : '0' })
     dispatch({type:'set', field:field, value:state[field] ==='0' ? '1' : '0' })
-
-    
   }
-
 
   function toClipBoard(copied) {
     try {
@@ -98,7 +70,6 @@ export default function App() {
       /* Rejected - text failed to copy to the clipboard */
     }
   }
-
 
   return (
       <main className={styles.tutorial}>
@@ -121,14 +92,3 @@ export default function App() {
       </main>
   )
 }
-
-
-
-
-      //<h1 className='text-center'>Push it to the limit!</h1>
-      //<p className='text-center'> <i className="bi bi-radioactive fs-3"></i> These below can <strong>nuke</strong> some data. Use only if you're in a hurry and there's not much to lose!</p>
-      //<h6 className='text-muted'> <i className="bi bi-file-code-fill fs-2"></i> One-liner with the essentials. Only thing left is to run the <strong>deploy</strong> script!</h6>
-      //<pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:little_boy}}></code></pre>
-      //
-      //<h6 className='text-muted'> <i className="bi bi-file-code fs-2"></i> This one also includes the <strong>optional</strong> configuration. Only for those that wanna go <strong>Full Nuclear!</strong></h6>
-      //<pre><code onClick={toClipBoard} className='text-start btn btn-light' dangerouslySetInnerHTML={{__html:tsar_bomba}}></code></pre>

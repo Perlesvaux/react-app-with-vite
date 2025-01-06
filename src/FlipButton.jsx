@@ -2,19 +2,19 @@ import styles from './FlipButton.module.css'
 import OnSVG from './OnSVG.jsx'
 import OffSVG from './OffSVG.jsx'
 
-export default function FlipButton({name, value, flip}){
+export default function FlipButton({name, value, flip, className}){
   return value==='1'
     ? <button  
-        className={styles.on} 
+        className={className}
         onClick={()=>flip(name)} 
       > 
-        <OnSVG fill="MediumSeaGreen" size="33px"  />
+        <OnSVG />
       </button>
     : <button
         className={styles.off} 
         onClick={()=>flip(name)} 
       >
-       <OffSVG fill="AntiqueWhite" size="33px" />
+       <OffSVG />
      </button>
          
 }

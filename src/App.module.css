@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   row-gap: var(--menu-row-gap);
+  padding-top: 2vh;
 
   /*hide scroll but keep functionality*/
   overscroll-behavior: contain;
@@ -23,3 +24,8 @@
   /*background-color: purple;*/
 }
 
+/*.menu img {*/
+  /*transform: scale(0.7,0.7);*/
+  /*width:200px;*/
+  /*height: 200px;*/
+/*}*/

@@ -1,0 +1,59 @@
+svg.envvars {
+  fill:var(--bg-envvars);
+}
+button.envvars svg {
+  fill:var(--bg-envvars);
+}
+button.envvars svg:hover {
+  fill:var(--hover-envvars);
+}
+label.envvars {
+  background-color:var(--bg-envvars);
+  color: black;
+}
+
+
+svg.pwa {
+  fill:var(--bg-pwa);;
+}
+button.pwa svg {
+  fill:var(--bg-pwa);
+}
+button.pwa svg:hover {
+  fill:var(--hover-pwa);
+}
+label.pwa {
+  background-color:var(--bg-pwa);
+  color: black;
+}
+
+
+svg.ghpages {
+  fill:var(--bg-ghpages);
+}
+button.ghpages svg {
+  fill:var(--bg-ghpages);
+}
+button.ghpages svg:hover {
+  fill:var(--hover-ghpages);
+}
+label.ghpages {
+  background-color:var(--bg-ghpages);
+  color: black;
+}
+
+
+
+svg.init {
+  fill:var(--bg-init);
+}
+
+svg.serve {
+  fill:var(--bg-serve);
+}
+
+svg.config {
+  fill:var(--bg-config);
+}
+
+

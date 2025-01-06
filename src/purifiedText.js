@@ -19,18 +19,19 @@ import DOMPurify from 'dompurify';
 //import hljs from 'highlight.js';
 
 import CodeSVG from './CodeSVG.jsx'
-import JsxTypeSVG from './JsxTypeSVG.jsx'
 import TerminalSVG from './TerminalSVG.jsx'
 import BoltSVG from './BoltSVG.jsx'
 import ObjSVG from './ObjSVG.jsx'
 
+import styles from './color.module.css'
+
 const size_svg = "2.1vw";
-const terminal_black = TerminalSVG(  { fill:"AntiqueWhite", size:size_svg } )
-const terminal_blue  = TerminalSVG(  { fill:"DodgerBlue",   size:size_svg } )
-const terminal_red   = TerminalSVG(  { fill:"Salmon",       size:size_svg } )
-const bolt           = BoltSVG(      { fill:"Gold",         size:size_svg } )
-const code_green     = CodeSVG(      { fill:"DarkSeaGreen", size:size_svg } )
-const obj_purple     = ObjSVG(       { fill:"DarkOrchid",   size:size_svg } )
+const envvars = TerminalSVG(  { size:size_svg , className:styles.envvars } )
+const pwa  = TerminalSVG(  { size:size_svg , className:styles.pwa     } )
+const ghpages   = TerminalSVG(  { size:size_svg , className:styles.ghpages } )
+const init           = BoltSVG(      { size:size_svg , className:styles.init    } )
+const serve     = CodeSVG(      { size:size_svg , className:styles.serve   } )
+const config     = ObjSVG(       { size:size_svg , className:styles.config  } )
 
 
 export function steps_purify(state){
@@ -55,50 +56,50 @@ const deploy_cmd = `npm run deploy`
 
   return [
     {
-      svg: bolt,
+      svg: init,
       legend:'Create project', 
       cmd: purified('bash', create_vite_project), 
       clipboard: create_vite_project,
     },
 
     { 
-      svg: obj_purple,
+      svg: config,
       legend: '... cd into the project.  Setup the vite.config.js', 
       cmd: purified('bash', vite_config),
       clipboard: vite_config,
     },
     { 
-      svg:terminal_red,
+      svg:ghpages,
       legend: state.ghpages==='0'? '' :  '... Add these scripts', 
       cmd: purified('bash', ghpages_scripts),
       clipboard:ghpages_scripts,
     },
     { 
-      svg:terminal_red,
+      svg:ghpages,
       legend: state.ghpages==='0'? '' :  '... Install this dependency',
       cmd:purified('bash', install_ghpages),
       clipboard: install_ghpages,
     },
     { 
-      svg: terminal_blue,
+      svg: pwa,
       legend:state.pwaPlug==='0'? '' : 'Install this dependency (don\'t forget to include the three images in /public)', 
       cmd: purified('bash',include_statics_in_public),
       clipboard: include_statics_in_public,
     },
     { 
-      svg:terminal_black,
+      svg:envvars,
       legend: state.backend==='0'? '' :  `Setup development/production env variables.`, 
       cmd:purified('bash',env_variables),
       clipboard: env_variables,
     },
     {
-      svg:terminal_black,
+      svg:envvars,
       legend: state.backend==='0'? '' :  '... This variable below stores its value', 
       cmd:purified('javascript', env_var),
       clipboard: env_var,
     },
     { 
-      svg:terminal_red,
+      svg:ghpages,
       legend: state.ghpages==='0'? '' :  '... When it\'s all said and done... It\'s time to deploy!', 
       cmd: purified('bash', deploy_cmd),
       clipboard: deploy_cmd,
@@ -115,19 +116,19 @@ const vite_preview =  `npm run preview -- --host`
 export function serve_purify() {
   return [
     {
-      svg:code_green,
+      svg:serve,
       legend: 'Serve (development)',
       cmd:purified('bash', vite_dev),
       clipboard: vite_dev,
     },
     {
-      svg:code_green,
+      svg:serve,
       legend: 'Build',
       cmd:purified('bash', vite_build),
       clipboard: vite_build,
     },
     {
-      svg:code_green,
+      svg:serve,
       legend: 'Serve (production)',
       cmd:purified('bash', vite_preview),
       clipboard: vite_preview,  
