@@ -3,15 +3,17 @@ import Copy from './Copy.jsx'
 
 export default function Step({steps, toClipBoard}){
 
-  return (<div style={{width:'90vh'}}>
+  return (<div>
       {
         steps.map((step, indx ) =>
         <div key={indx} className={styles.block}>
           { step.legend &&
             (<>
               <div className={styles.legend}>
-                {step.svg}
-                <strong dangerouslySetInnerHTML={{__html:step.legend}} /> 
+                <div>
+                  {step.svg}
+                  <strong dangerouslySetInnerHTML={{__html:step.legend}} /> 
+                </div> 
                 <Copy onClick={()=>toClipBoard(step.clipboard)}/>
               </div>
               <pre>

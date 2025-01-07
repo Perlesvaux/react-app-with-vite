@@ -1,13 +1,15 @@
-
 .menu {
+  background-color: DimGray;
   position: fixed;
   width: var(--menu-width);
-  top:0;
-  bottom:0;
+  top:10px;
+  bottom:10px;
   display: flex;
   flex-direction: column;
   row-gap: var(--menu-row-gap);
-  padding-top: 2vh;
+  /*padding-top: 2vh;*/
+  padding: 1vh;
+  border-radius: 20px;
 
   /*hide scroll but keep functionality*/
   overscroll-behavior: contain;
@@ -19,13 +21,7 @@
           
 .tutorial {
   display: grid;
-  grid-template-columns: var(--menu-width) 50%;
-  column-gap: var(--tutorial-gap);
-  /*background-color: purple;*/
+  grid-template-columns: var(--menu-width) var(--steps-width);
+  column-gap: var(--tutorial-column-gap);
 }
 
-/*.menu img {*/
-  /*transform: scale(0.7,0.7);*/
-  /*width:200px;*/
-  /*height: 200px;*/
-/*}*/

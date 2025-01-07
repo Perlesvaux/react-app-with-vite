@@ -79,6 +79,7 @@ export default function App() {
           <aside className={styles.menu}>
             <Togglers state={state} flip={flip}/>
             <SimpleForm getInput={getInput} parseUrl={parseUrl} state={state} flip={flip} />
+            <Step steps={serve} toClipBoard={toClipBoard} />
           </aside>
         </section>
         
@@ -86,7 +87,6 @@ export default function App() {
           <h1 className='text-center'>Quick Start!</h1>
           <p className='text-center'>This tutorial assumes you have already setup your <strong>remote repository!</strong></p>
           <Step steps={steps} toClipBoard={toClipBoard} />
-          <Step steps={serve} toClipBoard={toClipBoard} />
         </section>
 
       </main>

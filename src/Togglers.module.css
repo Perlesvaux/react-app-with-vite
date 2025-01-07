@@ -1,13 +1,16 @@
 .container {
-  background-color: lightsalmon;
+  /*background-color: lightsalmon;*/
   width: var(--menu-width);
 }
 
 .container label {
-  background-color: DimGray		;
-  display: grid;
-  grid-template-columns: 60% 40%;
+  display: flex;
+  justify-content: space-between;
+  /*display: grid;*/
+  /*grid-template-columns: 60% 40%;*/
   padding: var(--menu-padding);
   align-items: center;
   column-gap: 10px;
+  text-shadow: 1px 1px 3px black;
+  font-weight: bolder;
 }

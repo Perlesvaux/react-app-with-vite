@@ -3,22 +3,27 @@
   flex-direction: column;
   row-gap: var(--menu-row-gap);
   width: var(--menu-width);
+
 }
 
-.container > label {
-  display: grid;
-  grid-template-columns: 60% 40%;
-  background-color: #586674;
-}
+/*.container > label {*/
+/*  display: grid;*/
+/*  grid-template-columns: 60% 40%;*/
+/*}*/
 
 .container > label  {
   display: block; /* Makes the label behave like a block element */
   padding:var(--menu-padding);
+  border-radius: 6px;
+  /*text-shadow: 2px 2px 3px black;*/
+  font-weight: bolder;
 }
 
 .container > label > input {
   display: block; /* Optional: Ensures input spans the full width if needed */
   width: 100%; /* Optional: For full-width inputs */
   box-sizing: border-box;
+  /*border-radius: 10px;*/
+  /*background-color:rgba(0, 0, 0, 0.7) ;*/
 }
 

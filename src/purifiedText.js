@@ -25,7 +25,7 @@ import ObjSVG from './ObjSVG.jsx'
 
 import styles from './color.module.css'
 
-const size_svg = "2.1vw";
+const size_svg = "50px";
 const envvars = TerminalSVG(  { size:size_svg , className:styles.envvars } )
 const pwa  = TerminalSVG(  { size:size_svg , className:styles.pwa     } )
 const ghpages   = TerminalSVG(  { size:size_svg , className:styles.ghpages } )

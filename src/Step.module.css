@@ -1,11 +1,20 @@
 
 .legend {
-  padding: 5px 0px 0px 10px;
+  padding: 5px 10px 0px 10px;
   border-radius: 20px;
   background-color: #333333;
+  /*display: grid;*/
+  /*grid-template-columns: 7% 85% 8%;*/
+  display: flex;
+  justify-content: space-between;
   align-items: center; 
-  display: grid;
-  grid-template-columns: 7% 85% 8%;
+}
+
+.legend div {
+  display: flex;
+  column-gap: 20px;
+  align-items: center; 
+
 }
 
 pre {
@@ -22,5 +31,5 @@ pre {
 .block {
   background-color: #333333;
   border-radius: 20px;
-  width: var(--step-width);
+  /*width: var(--step-width);*/
 }

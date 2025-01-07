@@ -30,21 +30,19 @@
 
   --toggler-size:50px;
 
-
-
-
-
-  --menu-width:15vw;
+  --steps-width:700px;
+  --menu-width:350px;
   --menu-padding:0 1vw 0.4vw 1vw;
-  --menu-row-gap:5px;
-  --tutorial-gap:20px;
+  --menu-row-gap:9px;
+  --tutorial-column-gap:40px;
   --step-width:700px;
 }
 
 #root {
   max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+  /*margin: 0 auto;*/
+  padding-left: 75px;
+  /*padding: 2rem;*/
 }
 
 a {
@@ -59,9 +57,9 @@ a:hover {
 body {
   margin: 0;
   display: flex;
-  place-items: center;
+  /*place-items: center;*/
   min-width: 320px;
-  min-height: 100vh;
+  /*min-height: 100vh;*/
 }
 
 h1 {

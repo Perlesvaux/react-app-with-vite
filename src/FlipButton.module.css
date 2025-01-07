@@ -19,7 +19,7 @@ button {
   height: var(--toggler-size);
   width:  var(--toggler-size) !important;
   padding: 0 !important;
-  margin: auto;
+  /*margin: auto;*/
   align-items: center;
 }
 
