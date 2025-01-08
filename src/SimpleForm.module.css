@@ -23,6 +23,8 @@
   display: block; /* Optional: Ensures input spans the full width if needed */
   width: 100%; /* Optional: For full-width inputs */
   box-sizing: border-box;
+  color:white;
+  text-shadow: 1px 1px 2px black, 0 0 1px grey, 0 0 0.2px grey;
   /*border-radius: 10px;*/
   /*background-color:rgba(0, 0, 0, 0.7) ;*/
 }

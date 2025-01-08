@@ -7,15 +7,15 @@ export default function Togglers({state, flip}){
   
   return (<div className={styles.container} >
 
-      <label htmlFor="ghpages"  >GitHub Pages? 
+      <label htmlFor="ghpages"  > <abbr title="Host your project directly from your GitHub repo!">GitHub Pages?</abbr> 
         <FlipButton name="ghpages" value={state.ghpages} flip={flip} className={color.ghpages}/>
       </label>
 
-      <label htmlFor="backend" >Is there a backend? 
+      <label htmlFor="backend" > <abbr title="i.e.: API keys, URLs, database credentials">Environment variables?</abbr> 
         <FlipButton name="backend" value={state.backend} flip={flip} className={color.envvars}/>
       </label>
 
-      <label htmlFor="pwaPlug" >Will this be a PWA? 
+      <label htmlFor="pwaPlug" > <span>Will this be a <abbr title="Progresive Web App: A web app with offline features that can be installed locally">PWA</abbr>? </span>
         <FlipButton name="pwaPlug" value={state.pwaPlug} flip={flip} className={color.pwa}/>
       </label>
 
