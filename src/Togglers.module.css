@@ -14,3 +14,38 @@
   text-shadow: 1px 1px 3px black;
   font-weight: bolder;
 }
+
+.container label article {
+  position:fixed;
+  margin: auto;
+  background-color: rgba(1,9,9,0.8);
+  border:0;
+  border-radius: 20px;
+  padding:50px;
+  max-width: 600px;
+}
+
+.container label pre {
+  background-color: #404040;
+  padding: 10px 10px 10px 10px;
+  border-radius: 10px;
+  text-shadow: 0 !important;
+}
+
+
+.container label button {
+  display: inline;
+  border-radius: 0px !important;
+  border: 0px solid transparent !important;
+  cursor: pointer;
+  padding: 0 !important;
+}
+
+.container label span {
+  display: flex;
+  align-items: center;
+}
+
+.container label article strong {
+  color: crimson;
+}

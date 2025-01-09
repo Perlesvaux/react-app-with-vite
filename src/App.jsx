@@ -71,7 +71,7 @@ export default function App() {
     }
   }
 
-  return (
+  return (<>
       <main className={styles.tutorial}>
 
       {console.log(state)}
@@ -90,5 +90,8 @@ export default function App() {
         </section>
 
       </main>
+
+
+    </>
   )
 }
