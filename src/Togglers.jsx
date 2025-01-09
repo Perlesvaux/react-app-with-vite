@@ -40,9 +40,9 @@ export default function Togglers({state, flip}){
         <li><strong>Installable</strong>: You can "install" it from your browser—no app store needed!</li>
         <li><strong>Low Cost</strong>: Easier and cheaper to build than separate mobile apps for each platform.</li>
         <li><strong>Fast</strong>: PWAs load quickly because they store parts of the app on your device.</li>
-        <li><strong>Responsive</strong>: They look great on all devices (mobile, tablet, desktop).</li>
         <li><strong>Cross-Platform</strong>: One app works everywhere (on Android, iOS, and desktop browsers).</li>
         <li><strong>Updates Automatically</strong>: Users always see the latest version—no need to download updates</li>
+        <p>Make sure to build it and run preview. Look service worker status on browser devTools &gt; Application</p>
       </article>
       <span>Will this be a PWA? <button className={color.pwa} popovertarget="pwaPlug"><HelpSVG size="25px"/></button> </span>
         <FlipButton name="pwaPlug" value={state.pwaPlug} flip={flip} className={color.pwa}/>
