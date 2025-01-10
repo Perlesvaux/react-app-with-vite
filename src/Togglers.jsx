@@ -23,9 +23,10 @@ export default function Togglers({state, flip}){
       <label htmlFor="backend"> 
         <article popover="" id="backend">
           <p>Environment variables (or "env" variables) are like little notes or settings your app reads when it runs.</p> 
+          <p>They’re not written directly in your code (so they stay private) and <strong>can be different depending on where your app is running</strong>, like on your computer (development) or a server (production).</p>
           <p>They store things like passwords, API keys, URLs, database credentials or settings outside your code, so:</p>
-          <li><strong>Keep secrets safe</strong>: You don’t have to write them directly in your code.</li>
-          <li><strong>Easily change settings</strong>: Instead of editing the app, you change the variable.</li>
+          <li>Keep secrets safe: You don’t have to write them directly in your code.</li>
+          <li>Easily change settings: Instead of editing the app, you change the variable.</li>
           <p><a href="https://vite.dev/guide/env-and-mode" target="_blank"> Find more about it here</a></p>
         </article>
         <span>Environment variables?<button className={color.envvars} popovertarget="backend"><HelpSVG size="25px"/></button></span>
@@ -35,14 +36,15 @@ export default function Togglers({state, flip}){
       <label htmlFor="pwaPlug" >
       <article popover="" id="pwaPlug">
         <p>A <strong>Progressive Web App</strong> (PWA) looks and feels like a regular website, but it can also act like a mobile app you can install on your phone or desktop.</p>
+        <p><a href="https://developer.mozilla.org/en-US/docs/Web/Progressive_web_apps" target="_blank">Find more info here</a></p>
         <p>Key Features:</p>
-        <li><strong>Offline Mode</strong>: It can work even when there's no internet (thanks to caching).</li>
-        <li><strong>Installable</strong>: You can "install" it from your browser—no app store needed!</li>
-        <li><strong>Low Cost</strong>: Easier and cheaper to build than separate mobile apps for each platform.</li>
-        <li><strong>Fast</strong>: PWAs load quickly because they store parts of the app on your device.</li>
-        <li><strong>Cross-Platform</strong>: One app works everywhere (on Android, iOS, and desktop browsers).</li>
-        <li><strong>Updates Automatically</strong>: Users always see the latest version—no need to download updates</li>
-        <p>Make sure to build it and run preview. Look service worker status on browser devTools &gt; Application</p>
+        <li>Offline Mode: It can work even when there's no internet (thanks to caching).</li>
+        <li>Installable: You can "install" it from your browser—no app store needed!</li>
+        <li>Low Cost: Easier and cheaper to build than separate mobile apps for each platform.</li>
+        <li>Fast: PWAs load quickly because they store parts of the app on your device.</li>
+        <li>Cross-Platform: One app works everywhere (on Android, iOS, and desktop browsers).</li>
+        <li>Updates Automatically: Users always see the latest version—no need to download updates</li>
+        <p><strong>HINT:</strong> Make sure to build it and run preview. Look service worker status on browser devTools &gt; Application</p>
       </article>
       <span>Will this be a PWA? <button className={color.pwa} popovertarget="pwaPlug"><HelpSVG size="25px"/></button> </span>
         <FlipButton name="pwaPlug" value={state.pwaPlug} flip={flip} className={color.pwa}/>

@@ -172,16 +172,16 @@ function purified(lng, mrkp){
 }
 
 export function newRepo(state) {
-  return purified('bash', `#...or create a new repository on the command line
-echo "# prueba2" >> README.md
+  return purified('bash', `#...Either create a new local repository on the command line
+echo "# ${state.rep}" >> README.md
 git init
 git add README.md
 git commit -m "first commit"
 git branch -M main
-git remote add origin https://github.com/Perlesvaux/prueba2.git
+git remote add origin https://github.com/${state.usr}/${state.rep}.git
 git push -u origin main
 
-#...or push an existing repository from the command line
+#...or push an existing one 
 git remote add origin https://github.com/Perlesvaux/prueba2.git
 git branch -M main
 git push -u origin main`)

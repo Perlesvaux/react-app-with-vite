@@ -10,7 +10,7 @@ export default function SimpleForm({getInput, parseUrl, state}){
 
   return (
       <div className={styles.container}>
-        <label htmlFor="parseUrl" className={state.pwaPlug==='1' ? color.pwa : color.default } ><span>URL to your <abbr title="i.e.: https://github.com/YourUserName/project-name">GitHub</abbr> repo</span>
+        <label htmlFor="parseUrl" className={state.pwaPlug==='1' ? color.pwa : color.default } >URL to your GitHub repo
           <input type="text" name="parseUrl" onChange={getInput} onKeyUp={parseUrl}  value={state.parseUrl} placeholder="https://github.com/YourUserName/project-name" /> 
         </label>
         <label htmlFor="devPort" className={color.default} >Development PORT 

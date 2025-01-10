@@ -18,7 +18,7 @@
 .container label article {
   position:fixed;
   margin: auto;
-  background-color: rgba(1,9,9,0.8);
+  background-color: rgba(1,9,9,0.87);
   border:0;
   border-radius: 20px;
   padding:50px;
@@ -26,6 +26,8 @@
 }
 
 .container label pre {
+  display: block;
+  text-wrap: nowrap;
   background-color: #404040;
   padding: 10px 10px 10px 10px;
   border-radius: 10px;
@@ -41,7 +43,7 @@
   padding: 0 !important;
 }
 
-.container label span {
+.container label > span {
   display: flex;
   align-items: center;
 }

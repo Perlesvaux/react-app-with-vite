@@ -24,8 +24,17 @@
   width: 100%; /* Optional: For full-width inputs */
   box-sizing: border-box;
   color:white;
-  text-shadow: 1px 1px 2px black, 0 0 1px grey, 0 0 0.2px grey;
+  text-shadow: 1px 1px 1.5px black, 0 0 1.5px black, 0 0 1.5px black;
+  /*background-color: #4A4A4A;*/
+  background-color: #4A4A4A;
+  border-radius: 9px;
+  padding-left: 10px;
   /*border-radius: 10px;*/
   /*background-color:rgba(0, 0, 0, 0.7) ;*/
 }
 
+
+.container > label > input[placeholder] {
+  color: white;
+  text-shadow: none;
+}
