@@ -40,11 +40,6 @@ export default function pwaTemplate({rep, name, shortName, themeColor, descripti
         }
         ],
       },
-      workbox: {
-        runtimeCaching:[
-          { urlPattern:/assets/, handler:'NetworkFirst' },
-        ]
-      },
 
     })`
 
